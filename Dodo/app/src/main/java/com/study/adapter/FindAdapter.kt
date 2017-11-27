@@ -19,6 +19,7 @@ import java.util.zip.Inflater
 class FindAdapter(ctx : Context,list : MutableList<FindBean>?) : RecyclerView.Adapter<FindAdapter.FindViewHolder>() {
     var mContext = ctx
     var mList = list
+    private var listener : FindAdapter.ClickListener?=null
 
     override fun onBindViewHolder(holder: FindViewHolder?, position: Int) {
         holder?.name?.text = mList?.get(position)!!.name
@@ -28,6 +29,9 @@ class FindAdapter(ctx : Context,list : MutableList<FindBean>?) : RecyclerView.Ad
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FindViewHolder? {
         var view : View = LayoutInflater.from(mContext).inflate(R.layout.finditem,parent,false)
         var findViewHolder : FindViewHolder = FindViewHolder(view)
+        view.setOnClickListener {
+            listener?.setOnClick(findViewHolder.position)
+        }
         return findViewHolder
     }
 
@@ -35,7 +39,14 @@ class FindAdapter(ctx : Context,list : MutableList<FindBean>?) : RecyclerView.Ad
         return mList!!.size
     }
     class FindViewHolder(itemView : View?) : RecyclerView.ViewHolder(itemView){
-        var name = itemView?.findViewById(R.id.name) as TextView
-        var img = itemView?.findViewById(R.id.findIV) as ImageView
+        var name = itemView?.findViewById<TextView>(R.id.name)
+        var img = itemView?.findViewById<ImageView>(R.id.findIV)
+    }
+    //接口回调点击事件
+    interface ClickListener{
+        fun setOnClick(position: Int)
+    }
+    fun setListener(listen : ClickListener){
+        this.listener=listen
     }
 }
