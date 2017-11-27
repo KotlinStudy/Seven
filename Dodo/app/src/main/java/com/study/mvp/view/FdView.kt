@@ -7,4 +7,8 @@ package com.study.mvp.view
  *2017/11/23  9:17
  */
 interface FdView {
+    fun setPhoneError()
+    fun setPwdError()
+    fun setSuccessful()
+    fun setUnSuccessful()
 }
