@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener,FdView {
         val log_pwd = findViewById(R.id.log_pwd) as EditText
         log_back.setOnClickListener(this)
         login_but.setOnClickListener(this)
-        
+
         fdPresenter = FDPresenter(FdModel(),this)
 
     }
