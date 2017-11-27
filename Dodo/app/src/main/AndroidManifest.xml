@@ -18,13 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.MyActivity"></activity>
-
-        <activity android:name=".activity.WeekItemActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            ></activity>
-
+        <activity android:name=".activity.MyActivity" />
+        <activity
+            android:name=".activity.WeekItemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegisterActivity"></activity>
     </application>
 
 </manifest>

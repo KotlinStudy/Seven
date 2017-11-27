@@ -3,7 +3,9 @@ apply plugin: 'kotlin-android'
 //快捷的findviewfindid操作，建议加上
 apply plugin: 'kotlin-android-extensions'
 android {
+
     compileSdkVersion 26
+
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.study"
