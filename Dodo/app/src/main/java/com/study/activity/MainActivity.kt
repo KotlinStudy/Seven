@@ -16,6 +16,7 @@ import com.study.fragment.FragmentB
 import com.study.fragment.FragmentC
 import com.study.fragment.FragmentD
 import com.study.mview.MFragmentTabHost
+import kotlinx.android.synthetic.main.item.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -76,9 +77,9 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getTabItemView(index: Int): View? {
         val view = layoutInflater?.inflate(R.layout.tab_item_view, null)
-        val imageView = view?.findViewById<ImageView>(R.id.image)
+        val imageView = view?.findViewById(R.id.image) as ImageView
         imageView?.setImageResource(mImageViewArray[index])
-        val tab=view?.findViewById<TextView>(R.id.tab)
+        val tab=view?.findViewById(R.id.tab) as TextView
         tab?.text=mTextviewArray[index];
         return view
 

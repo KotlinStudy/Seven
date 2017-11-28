@@ -5,6 +5,8 @@ package com.study.util
  */
 interface FinishListener {
 
+    fun onPhoneE()
+    fun onPwdE()
     fun Successful()
     fun UnSuccessful()
 }

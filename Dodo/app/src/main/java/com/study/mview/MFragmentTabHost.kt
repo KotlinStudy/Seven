@@ -107,7 +107,7 @@ class MFragmentTabHost : TabHost, TabHost.OnTabChangeListener {
     private fun ensureHierarchy(context: Context) {
         // If owner hasn't made its own view hierarchy, then as a convenience
         // we will construct a standard one here.
-        if (findViewById<TabHost>(android.R.id.tabs) == null) {
+        if (findViewById(android.R.id.tabs) == null) {
             val ll = LinearLayout(context)
             ll.orientation = LinearLayout.VERTICAL
             addView(ll, FrameLayout.LayoutParams(
@@ -168,7 +168,7 @@ class MFragmentTabHost : TabHost, TabHost.OnTabChangeListener {
 
     private fun ensureContent() {
         if (mRealTabContent == null) {
-            mRealTabContent = findViewById<FrameLayout>(mContainerId)
+            mRealTabContent = findViewById(mContainerId) as FrameLayout
             if (mRealTabContent == null) {
                 throw IllegalStateException(
                         "No tab content FrameLayout found for id " + mContainerId)

@@ -47,8 +47,8 @@ class WeekAdapter(context:Context,data : HotData.HotData) : RecyclerView.Adapter
       return data!!.itemList.size
     }
     class MyHolder(itemview : View) :RecyclerView.ViewHolder(itemview){
-        var image: ImageView =itemView!!.findViewById<ImageView>(R.id.slt)
-        var title: TextView =itemView!!.findViewById<TextView>(R.id.tv_title)
+        var image: ImageView =itemView!!.findViewById(R.id.slt) as ImageView
+        var title: TextView =itemView!!.findViewById(R.id.tv_title) as TextView
     }
     //接口回调点击事件
     interface ClickListener{
