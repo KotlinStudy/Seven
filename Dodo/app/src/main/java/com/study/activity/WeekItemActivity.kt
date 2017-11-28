@@ -29,6 +29,7 @@ class WeekItemActivity : BaseActivity<WeekItemView,WeekItemPresenter>() {
        var video:Video= intent.getSerializableExtra("data") as Video;
         //LongToast(video.title!!)
         videoplayer.setUp(video.playUrl, JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,video.title);
+        Glide.with(this).load(video.feed).into(videoplayer.thumbImageView)
         Glide.with(this).load(video.blurred).into(slt)
     }
 
