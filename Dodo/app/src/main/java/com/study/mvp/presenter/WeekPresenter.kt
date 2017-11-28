@@ -1,6 +1,5 @@
 package com.study.mvp.presenter
 
-import android.util.Log
 import com.study.base.BasePresenter
 import com.study.bean.HotData
 import com.study.mvp.model.WeekMode
@@ -17,8 +16,7 @@ class WeekPresenter : BasePresenter<WeekView>() {
     fun getData(){
         val flowable = WeekMode().getHotData();
         val disposable = flowable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe { data: HotData.HotData ->
-                    getView()?.setHotData(data)
+                .subscribe { data: HotData.HotData ->getView()?.setHotData(data)
                 }
         add(disposable)
     }

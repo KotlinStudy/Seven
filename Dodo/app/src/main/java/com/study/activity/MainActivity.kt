@@ -1,17 +1,16 @@
 package com.study.activity
 
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
-import com.study.R
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
-import com.study.fragment.FragmentA
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.study.R
+import com.study.fragment.FragmentA
 import com.study.fragment.FragmentB
 import com.study.fragment.FragmentC
 import com.study.fragment.FragmentD
@@ -23,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     private var mTabHost: MFragmentTabHost? = null
     //定义一个布局
     private var layout:LayoutInflater?=null;
-
 
     //定义数组来存放Fragment界面
     private val fragmentArray = arrayOf<Class<*>>(FragmentA::class.java, FragmentB::class.java, FragmentC::class.java, FragmentD::class.java)
