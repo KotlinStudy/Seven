@@ -6,7 +6,11 @@ import com.study.bean.Bean
 import com.study.bean.FindBean
 import com.study.bean.HotData
 import io.reactivex.Flowable
+import com.study.bean.*
+import io.reactivex.Observable
+import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  *类的用途：
@@ -39,4 +43,16 @@ interface ApiService {
     //"http://baobab.wandoujia.com/api/
     // v3/videos?categoryName=%s&strategy=%s&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83";
 
+    /**
+     * 注册接口
+     * https://www.zhaoapi.cn/user/reg
+     */
+    @GET("reg")
+    fun getRegData(@Query("mobile") mobile:String, @Query("password")pass:String) : Flowable<RegBean>
+    /**
+     * 登录接口
+     * https://www.zhaoapi.cn/user/login
+     */
+   /* @GET("reg")
+    fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
 }
