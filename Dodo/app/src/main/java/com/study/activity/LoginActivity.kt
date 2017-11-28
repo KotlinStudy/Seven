@@ -52,10 +52,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener,FdView {
         Toast.makeText(this,"密码输入有误",Toast.LENGTH_SHORT).show()
     }
     override fun setSuccessful() {
-        Toast.makeText(this,"成功",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"登录成功",Toast.LENGTH_SHORT).show()
+        this.finish()
     }
 
     override fun setUnSuccessful() {
-        Toast.makeText(this,"失败",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"登录失败",Toast.LENGTH_SHORT).show()
     }
 }

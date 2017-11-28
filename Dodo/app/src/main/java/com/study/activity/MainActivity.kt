@@ -16,6 +16,7 @@ import com.study.fragment.FragmentB
 import com.study.fragment.FragmentC
 import com.study.fragment.FragmentD
 import com.study.mview.MFragmentTabHost
+import kotlinx.android.synthetic.main.item.view.*
 
 
 class MainActivity : AppCompatActivity() {

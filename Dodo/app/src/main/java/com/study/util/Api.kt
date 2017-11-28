@@ -13,7 +13,7 @@ class Api {
     companion object {
 
         val baseUrl:String="http://baobab.wandoujia.com/api/"
-
+        val myUrl:String ="https://www.zhaoapi.cn/user/"
     }
 
 
