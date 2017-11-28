@@ -49,9 +49,9 @@ class MyAdapter(context:Context,list:ArrayList<Bean.Item>) : RecyclerView.Adapte
 
     class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView)
     {
-        var image=itemView?.findViewById(R.id.iv) as ImageView
-        var title=itemView?.findViewById(R.id.title) as TextView
-        var text=itemView?.findViewById(R.id.text) as TextView
+        var image=itemView?.findViewById(R.id.iv) as ImageView as ImageView
+        var title=itemView?.findViewById(R.id.title) as TextView as TextView
+        var text=itemView?.findViewById(R.id.text) as TextView as TextView
     }
 
     var myitem:MyItemOnClick?=null;

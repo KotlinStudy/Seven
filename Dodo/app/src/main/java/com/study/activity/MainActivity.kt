@@ -72,12 +72,12 @@ class MainActivity : AppCompatActivity() {
     /**
      * 给Tab按钮设置图标和文字
      */
-    private fun getTabItemView(index: Int): View {
+    private fun getTabItemView(index: Int): View? {
         val view = layoutInflater?.inflate(R.layout.tab_item_view, null)
-        val imageView = view?.findViewById(R.id.image) as ImageView
-        imageView.setImageResource(mImageViewArray[index])
+        val imageView = view?.findViewById(R.id.image)as ImageView
+        imageView?.setImageResource(mImageViewArray[index])
         val tab=view?.findViewById(R.id.tab) as TextView
-        tab.text=mTextviewArray[index];
+        tab?.text=mTextviewArray[index];
         return view
 
     }

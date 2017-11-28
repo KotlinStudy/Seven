@@ -19,10 +19,11 @@ class FBPresenter(modelB : FbModel) :BasePresenter<FbView>(){
     var modelB = modelB
 
     fun loadFind(){
-        modelB.loadFind()?.subscribeOn(Schedulers.io())
+        val disposable = modelB.loadFind()?.subscribeOn(Schedulers.io())
                 ?.observeOn(AndroidSchedulers.mainThread())
-                ?.subscribe({findBean: MutableList<FindBean>->
+                ?.subscribe({ findBean: MutableList<FindBean> ->
                     getView()?.setFindData(findBean)
                 })
+        add(disposable!!)
     }
 }

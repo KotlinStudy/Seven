@@ -168,7 +168,7 @@ class MFragmentTabHost : TabHost, TabHost.OnTabChangeListener {
 
     private fun ensureContent() {
         if (mRealTabContent == null) {
-            mRealTabContent = findViewById(mContainerId) as FrameLayout
+            mRealTabContent = findViewById(mContainerId)as FrameLayout
             if (mRealTabContent == null) {
                 throw IllegalStateException(
                         "No tab content FrameLayout found for id " + mContainerId)
