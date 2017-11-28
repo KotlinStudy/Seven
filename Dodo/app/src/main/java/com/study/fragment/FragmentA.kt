@@ -1,19 +1,9 @@
 package com.study.fragment
 
-import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.ImageView
-import android.widget.LinearLayout
 import com.study.R
-import com.study.activity.MyActivity
 import com.study.activity.WeekItemActivity
 import com.study.adapter.MyAdapter
 import com.study.base.BaseFragment
@@ -23,8 +13,6 @@ import com.study.mvp.model.FaModel
 import com.study.mvp.presenter.FAPresenter
 import com.study.mvp.view.FaView
 import kotlinx.android.synthetic.main.fragmenta.*
-import kotlinx.android.synthetic.main.week.*
-import java.io.Serializable
 
 
 /**
@@ -89,8 +77,6 @@ class FragmentA : BaseFragment<FaView,FAPresenter>(),View.OnClickListener,FaView
            else ->{}
        }
     }
-
-
 
 
     override fun processLogic() {

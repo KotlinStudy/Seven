@@ -31,6 +31,10 @@ class WeekItemActivity : BaseActivity<WeekItemView,WeekItemPresenter>() {
         videoplayer.setUp(video.playUrl, JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,video.title);
         Glide.with(this).load(video.feed).into(videoplayer.thumbImageView)
         Glide.with(this).load(video.blurred).into(slt)
+        discri.text=video.description
+        down.setOnClickListener{
+            LongToast("开始下载")
+        }
     }
 
     override fun onBackPressed() {
