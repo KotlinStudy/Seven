@@ -39,9 +39,16 @@ interface ApiService {
     // v2/categories?udid=26868b32e808498db32fd51fb422d00175e179df&vc=83";
     @GET("v2/categories?udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
     fun getFindData() : Flowable<MutableList<FindBean>>
-    //发现更多详情接口
+    //发现频道详情接口
     //"http://baobab.wandoujia.com/api/
     // v3/videos?categoryName=%s&strategy=%s&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83";
+    @GET("v3/videos")
+    fun getFindDetailData(@Query("categoryName") categoryName :String,@Query("strategy") strategy :String,
+                          @Query("udid") udid :String,@Query("vc") vc :Int) : Flowable<HotData.HotData>
+    //获取发现详情加载更多消息
+    @GET("v3/videos")
+    fun getFindDetailMoreData(@Query("start") start :Int,@Query("num") num :Int,
+                              @Query("categoryName") categoryName :String,@Query("strategy") strategy :String) : Flowable<HotData.HotData>
 
     /**
      * 注册接口
