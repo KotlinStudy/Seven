@@ -38,14 +38,6 @@ abstract class BasePresenter<V> {
     /**
      * 获取view
      */
-
-
-
-
-
-
-
-
     /**
      * 解除关联的方法
      */

@@ -10,7 +10,6 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.study.R
 import com.study.bean.HotData
-import kotlinx.android.synthetic.main.hotitem.*
 
 /**
  *  1. 周热门的适配器
@@ -32,6 +31,7 @@ class WeekAdapter(context:Context,data : HotData.HotData) : RecyclerView.Adapter
        var myHolder=holder as MyHolder
         holder.title.text=data!!.itemList[position].data.title
         Glide.with(con).load(data!!.itemList[position].data.cover.detail).into(holder.image)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {

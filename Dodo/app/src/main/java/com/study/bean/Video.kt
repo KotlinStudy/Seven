@@ -5,7 +5,7 @@ import android.os.Parcelable
 import java.io.Serializable
 
 /**
- *  1. 类的用途
+ *  1. 跳转详情时的bean
  * 2. @author admin
  * 3. @date 2017/11/24 11:13
  */

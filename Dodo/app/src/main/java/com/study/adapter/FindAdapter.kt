@@ -39,8 +39,8 @@ class FindAdapter(ctx : Context,list : MutableList<FindBean>?) : RecyclerView.Ad
         return mList!!.size
     }
     class FindViewHolder(itemView : View?) : RecyclerView.ViewHolder(itemView){
-        var name = itemView?.findViewById(R.id.name) as TextView
-        var img = itemView?.findViewById(R.id.findIV) as ImageView
+        var name = itemView?.findViewById(R.id.name)as TextView
+        var img = itemView?.findViewById(R.id.findIV)as ImageView
     }
     //接口回调点击事件
     interface ClickListener{
