@@ -53,6 +53,6 @@ interface ApiService {
      * 登录接口
      * https://www.zhaoapi.cn/user/login
      */
-   /* @GET("reg")
-    fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
+    /* @GET("reg")
+     fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
 }
