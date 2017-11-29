@@ -39,7 +39,6 @@ class FragmentB : BaseFragment<FbView, FBPresenter>(),FbView {
             override fun setOnClick(position: Int) {
                 Toast.makeText(activity,"点击了:"+position,Toast.LENGTH_SHORT).show()
             }
-
         })
 
     }
