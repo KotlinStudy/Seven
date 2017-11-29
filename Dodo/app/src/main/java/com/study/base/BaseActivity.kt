@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
+import com.study.R
 
 /**
  *类的用途：
@@ -19,6 +20,7 @@ abstract  class BaseActivity<V ,P:BasePresenter<V>>: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.AppTheme)
         setContentView(setLayout())
         //沉浸式状态栏  4.4以上系统
         //通知栏（notification）背景颜色跟随app导航栏（top title）背景颜色变化而变化。
