@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.fragmentd.*
 /**
  *类的用途：
  *
- *mac周昇辰
+ *张丹阳
  *2017/11/22  20:22
  */
 class FragmentD : BaseFragment<FdView,FDPresenter>(), View.OnClickListener {
