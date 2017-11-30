@@ -48,14 +48,14 @@ interface ApiService {
 
     /**
      * 注册接口
-     * https://www.zhaoapi.cn/user/reg
+     * "http://172.17.29.27/quarter/user/"
      */
-    @GET("reg")
-    fun getRegData(@Query("mobile") mobile:String, @Query("password")pass:String) : Flowable<RegBean>
+    @GET("addUser")
+    fun getRegData(@Query("mobile") mobile:String, @Query("password") password:String) : Call<RegBean>
     /**
      * 登录接口
      * https://www.zhaoapi.cn/user/login
      */
-    /* @GET("reg")
+    /* @GET("login")
      fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
 }

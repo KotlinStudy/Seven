@@ -1,5 +1,6 @@
 package com.study.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -51,8 +52,9 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener ,FdView{
         reg_pwd.setError("pwd cannot be empty")
     }
     override fun setSuccessful() {
-        Toast.makeText(this,"注册成功", Toast.LENGTH_SHORT).show()
-        this.finish()
+        var intent = Intent(this,MainActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
     }
 
     override fun setUnSuccessful() {
