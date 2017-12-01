@@ -31,7 +31,6 @@ class WeekAdapter(context:Context,data : HotData.HotData) : RecyclerView.Adapter
        var myHolder=holder as MyHolder
         holder.title.text=data!!.itemList[position].data.title
         Glide.with(con).load(data!!.itemList[position].data.cover.detail).into(holder.image)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {

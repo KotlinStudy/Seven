@@ -12,4 +12,8 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/landing_background</item>
     </style>
+
+    <style name="MyThrme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MyThrme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

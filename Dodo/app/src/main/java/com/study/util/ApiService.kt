@@ -29,9 +29,9 @@ interface ApiService {
 
     @GET("v2/feed?num=2&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
     fun getData():Flowable<Bean.Bean>
-    @GET("v3/ranklist?num=10&strategy=%s&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
+    @GET("v3/ranklist?num=10&strategy=weekly&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
     fun getHotData() :Flowable<HotData.HotData>
-    @GET("v3/ranklist?num=10&monthly=%s&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
+    @GET("v3/ranklist?num=10&strategy=monthly&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
     fun getHotDataMonth() :Flowable<HotData.HotData>
 
     //发现更多
@@ -56,6 +56,17 @@ interface ApiService {
      * 登录接口
      * https://www.zhaoapi.cn/user/login
      */
+
     @GET("login")
     fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<LogBean>
+
+   /* @GET("reg")
+    fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
+//    获取关键词搜索相关信息
+    @GET("v1/search")
+    fun getSearchData(@Query("num") num :Int,@Query("query") query :String,
+                      @Query("start") start :Int) : Observable<SearchBean.SearchBean>
+    /* @GET("login")
+     fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
+
 }
