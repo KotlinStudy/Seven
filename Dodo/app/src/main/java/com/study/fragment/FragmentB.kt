@@ -45,7 +45,6 @@ class FragmentB : BaseFragment<FbView, FBPresenter>(),FbView {
                 Toast.makeText(activity,"点击了:"+position+","+findBean[position].id,Toast.LENGTH_SHORT).show()
             }
         })
-
     }
 
 
