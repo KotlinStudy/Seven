@@ -7,10 +7,6 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import com.study.R
-import com.study.bean.Video
-import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
 /**
  *类的用途：
