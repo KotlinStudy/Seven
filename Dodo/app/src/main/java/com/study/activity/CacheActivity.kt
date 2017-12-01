@@ -10,7 +10,6 @@ import android.widget.ImageView
 import com.study.R
 import com.study.adapter.CacheAdapter
 import com.study.bean.Video
-import com.study.bean.VideoMap
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
