@@ -36,6 +36,6 @@ class FdModel : ModelIF{
         val regData = RetrofitUtils.intance
                 ?.getInterService(Api.myUrl, ApiService::class.java)
                 ?.getRegData(phone, pwd)
-        //return regData
+        //regData?.enqueue(object : Callback<>)
     }
 }
