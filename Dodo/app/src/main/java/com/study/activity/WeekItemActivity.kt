@@ -3,6 +3,8 @@ package com.study.activity
 /**
  * week详情
  */
+import android.util.Log
+import android.widget.ImageView
 import cn.jzvd.JZVideoPlayer
 import cn.jzvd.JZVideoPlayerStandard
 import com.bumptech.glide.Glide
@@ -30,9 +32,9 @@ class WeekItemActivity : BaseActivity<WeekItemView,WeekItemPresenter>() {
     }
     override fun processLogic() {
        var video:Video= intent.getSerializableExtra("data") as Video;
-        //LongToast(video.title!!)
         videoplayer.setUp(video.playUrl, JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,video.title);
         Glide.with(this).load(video.feed).into(videoplayer.thumbImageView)
+        videoplayer.thumbImageView.scaleType=ImageView.ScaleType.FIT_XY
         Glide.with(this).load(video.blurred).into(slt)
         discri.text=video.description
         down.setOnClickListener{
