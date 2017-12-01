@@ -5,6 +5,8 @@ package com.study.bean
  */
 data class RegBean(
 		val msg: String, //天呢！用户名或密码不能为空
-		val code: String, //1
+		val code: Int, //1
 		val data: String //{}
 )
+
+

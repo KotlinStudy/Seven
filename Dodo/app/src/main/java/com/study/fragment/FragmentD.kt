@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.study.R
+import com.study.activity.CacheActivity
 import com.study.activity.LoginActivity
 import com.study.activity.RegisterActivity
 import com.study.base.BaseFragment
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.fragmentd.*
 /**
  *类的用途：
  *
- *mac周昇辰
+ *张丹阳
  *2017/11/22  20:22
  */
 class FragmentD : BaseFragment<FdView,FDPresenter>(), View.OnClickListener {
@@ -41,11 +42,11 @@ class FragmentD : BaseFragment<FdView,FDPresenter>(), View.OnClickListener {
             R.id.tv_advise ->{
                 var intent = Intent(activity,AdviseActivity::class.java)
                 startActivity(intent)
-            }
-            R.id.tv_save ->{
-                var intent = Intent(activity,CacheActivity::class.java)
-                startActivity(intent)
             }*/
+            R.id.tv_save ->{
+                var intent = Intent(activity, CacheActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

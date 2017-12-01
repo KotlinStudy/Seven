@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.widget.GridLayout
 import android.widget.Toast
 import com.study.R
+import com.study.activity.FindDetailsActivity
 import com.study.activity.WeekItemActivity
 import com.study.adapter.FindAdapter
 import com.study.base.BaseFragment
@@ -37,11 +38,13 @@ class FragmentB : BaseFragment<FbView, FBPresenter>(),FbView {
         rlv.adapter = adapter
         adapter.setListener(object  : FindAdapter.ClickListener{
             override fun setOnClick(position: Int) {
-                Toast.makeText(activity,"点击了:"+position,Toast.LENGTH_SHORT).show()
+                var intent : Intent = Intent(activity,FindDetailsActivity::class.java)
+                val name = findBean[position].name
+                intent.putExtra("name",name)
+                startActivity(intent)
+                Toast.makeText(activity,"点击了:"+position+","+findBean[position].id,Toast.LENGTH_SHORT).show()
             }
-
         })
-
     }
 
 

@@ -4,21 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/title"
+    <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Discover"
-        android:gravity="center"
-        android:drawableRight="@drawable/icon_search"
-        android:layout_marginRight="5dp"
-        android:textSize="18sp"/>
+        android:layout_height="70dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Discover"
+            android:gravity="center"
+            android:textSize="18sp"/>
+        <ImageView
+            android:src="@drawable/icon_search"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rlv"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:layout_below="@+id/title"
+            android:layout_below="@+id/rl"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
