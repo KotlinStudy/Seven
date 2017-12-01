@@ -47,7 +47,12 @@ class SpUtils private constructor(context: Context) {
         sp.edit().remove(key).commit()
     }
 
-
+    @JvmOverloads fun getInt(key: String, defaultValue: Int = -1): Int {
+        return sp.getInt(key, defaultValue)
+    }
+    @JvmOverloads fun getBoolean(key: String, defaultValue: Boolean = false): Boolean {
+        return sp.getBoolean(key, defaultValue)
+    }
     companion object {
         private var spUtil :SpUtils?=null
         /**
