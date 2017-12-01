@@ -1,6 +1,7 @@
 package com.study.fragment
 
 import android.content.Intent
+import android.os.Handler
 import android.os.Parcel
 import android.os.Parcelable
 import android.support.v7.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.study.bean.HotData
 import com.study.bean.Video
 import com.study.mvp.presenter.WeekPresenter
 import com.study.mvp.view.WeekView
+import kotlinx.android.synthetic.main.month.*
 import kotlinx.android.synthetic.main.week.*
 import java.util.*
 
@@ -22,7 +24,7 @@ import java.util.*
  */
 class WeekFragment : BaseFragment<WeekView,WeekPresenter>(),WeekView{
 
-
+    var handler:Handler= Handler()
     override fun setHotData(data: HotData.HotData) {
         var adapter=WeekAdapter(activity,data)
             recycler.adapter=adapter
@@ -60,6 +62,11 @@ class WeekFragment : BaseFragment<WeekView,WeekPresenter>(),WeekView{
     override fun processLogic() {
         mPresenter?.getData()
         recycler.layoutManager=LinearLayoutManager(context)
+        refresh.setOnRefreshListener {
+            handler.postDelayed(Runnable {
+                refresh.isRefreshing=false
+            },2000)
+        }
     }
 
 

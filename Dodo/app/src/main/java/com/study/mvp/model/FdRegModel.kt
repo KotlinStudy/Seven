@@ -9,11 +9,16 @@ import com.study.util.RetrofitUtils
 import com.zsc.kot.util.Api
 import com.zsc.kot.util.ApiService
 import io.reactivex.Flowable
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 /**
  * Created by 张丹阳 on 2017/11/28.
  */
 class FdRegModel : ModelIF{
+
     override fun regLog(ctx: Context, phone: String, pwd: String, listener: FinishListener){
         if(TextUtils.isEmpty(phone)){
             listener.onPhoneE()
@@ -27,13 +32,23 @@ class FdRegModel : ModelIF{
         }
         listener.Successful()
 
-
-        fun getRegData() : Flowable<RegBean> {
-            val regData = RetrofitUtils.intance
+        /*val regData = RetrofitUtils.intance
                     ?.getInterService(Api.myUrl, ApiService::class.java)
                     ?.getRegData(phone,pwd)
-            return regData!!
-
-        }
+        regData!!.enqueue(object :Callback<RegBean>{
+            override fun onResponse(call: Call<RegBean>?, response: Response<RegBean>?) {
+                val body = response?.body()
+                Toast.makeText(ctx, response!!.code(), Toast.LENGTH_SHORT).show()
+                if (body?.code==0){
+                    listener.Successful()
+                    Toast.makeText(ctx,"注册成功!!!!", Toast.LENGTH_SHORT).show()
+                }else{
+                    listener.UnSuccessful()
+                    Toast.makeText(ctx,"注册失败!!!!", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<RegBean>?, t: Throwable?) {
+            }
+        })*/
     }
 }
