@@ -2,6 +2,7 @@ package com.study.fragment
 
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import com.study.R
 import com.study.activity.WeekItemActivity
 import com.study.adapter.MonthAdapter
@@ -39,6 +40,8 @@ class MonthFragment : BaseFragment<MonthView,MonthPresenter>(),MonthView {
                 var videoBean  = Video(photoUrl,title,desc,duration.toLong(),playUrl,category,blurred,collect ,share ,reply,time)
                 intent.putExtra("data",videoBean)
                 activity.startActivity(intent)
+                LongToast("跳转成功")
+
             }
         })
     }

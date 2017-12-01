@@ -55,4 +55,8 @@ interface ApiService {
      */
    /* @GET("reg")
     fun getLogData(@Query("mobile")mobile:String,@Query("password")pass:String):Call<RegBean>*/
+//    获取关键词搜索相关信息
+    @GET("v1/search")
+    fun getSearchData(@Query("num") num :Int,@Query("query") query :String,
+                      @Query("start") start :Int) : Observable<SearchBean.SearchBean>
 }
