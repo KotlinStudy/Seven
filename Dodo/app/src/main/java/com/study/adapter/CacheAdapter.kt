@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide
 import com.study.R
 import com.study.activity.WeekItemActivity
 import com.study.bean.Video
+import com.study.util.ObjectSaveUtils
 import com.study.util.SpUtils
 import io.reactivex.disposables.Disposable
 import zlc.season.rxdownload2.RxDownload
@@ -51,7 +52,7 @@ class CacheAdapter(context : Context, list: ArrayList<Video>) : RecyclerView.Ada
                 isDownload = false
                 SpUtils.getInstance(context!!).put(mList?.get(position)?.playUrl!!, false)
                 holder?.iv_download_state?.setImageResource(R.drawable.icon_download_start)
-                RxDownload.getInstance(context).pauseServiceDownload(mList?.get(position)?.feed).subscribe()
+                RxDownload.getInstance(context).pauseServiceDownload(mList?.get(position)?.playUrl).subscribe()
             } else {
                 isDownload = true
                 SpUtils.getInstance(context!!).put(mList?.get(position)?.playUrl!!, true)
@@ -77,7 +78,8 @@ class CacheAdapter(context : Context, list: ArrayList<Video>) : RecyclerView.Ada
             if(hasLoaded){
                 var files = RxDownload.getInstance(context).getRealFiles(playUrl)
                 var uri = Uri.fromFile(files!![0])
-                intent.putExtra("loaclFile",uri.toString())
+                intent.putExtra("data", uri.toString())
+                ObjectSaveUtils.saveObject(context,"localFile",videoBean)
             }
             context.startActivity(intent)
         }
@@ -96,6 +98,7 @@ class CacheAdapter(context : Context, list: ArrayList<Video>) : RecyclerView.Ada
             }
             var downloadStatus = event.downloadStatus
             var percent = downloadStatus.percentNumber
+
             Log.e("xxx","lal-"+percent)
             if (percent == 100L) {
                 if(!disposable.isDisposed && disposable!= null){
@@ -126,7 +129,7 @@ class CacheAdapter(context : Context, list: ArrayList<Video>) : RecyclerView.Ada
     }
 
     override fun getItemCount(): Int {
-        return mList?.size ?: 0
+        return mList?.size
     }
 
     private fun addMission(playUrl: String?, count: Int) {

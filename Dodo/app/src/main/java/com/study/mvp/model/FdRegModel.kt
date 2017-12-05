@@ -31,7 +31,6 @@ class FdRegModel : ModelIF{
             return
         }
         listener.Successful()
-
         /*val regData = RetrofitUtils.intance
                     ?.getInterService(Api.myUrl, ApiService::class.java)
                     ?.getRegData(phone,pwd)

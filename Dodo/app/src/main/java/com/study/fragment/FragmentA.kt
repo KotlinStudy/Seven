@@ -12,6 +12,8 @@ import com.study.bean.Video
 import com.study.mvp.model.FaModel
 import com.study.mvp.presenter.FAPresenter
 import com.study.mvp.view.FaView
+import com.study.search.SearchActivity
+import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.fragmenta.*
 
 
@@ -63,7 +65,11 @@ class FragmentA : BaseFragment<FaView,FAPresenter>(),View.OnClickListener,FaView
                 startActivity(intent)
             }
         })
-
+        searchimage.setOnClickListener{
+            val intent=Intent()
+            intent.setClass(activity,SearchActivity::class.java)
+           startActivity(intent)
+        }
     }
 
 
